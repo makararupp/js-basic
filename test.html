@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js arrya</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 menu" id="menu">
+                <ul>
+                    <!-- <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">CSS</a>=
+                    </li>
+                    <li>
+                        <a href="">HTML</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo"></div>
+    <input type="button" value="click1" id="btn1">
+    <input type="button" value="click2" id="btn2">
+    <input type="button" value="click3" id="btn3">
+    <input type="text" name="" id="txt-item">
+</body>
+<script>
+
+    var colors = ['red','yellow','blue','green','black','mixie','coffee'];
+    var itemColors =  new Array("Html","css","js","php","Mysql","Flutter"); 
+    //Declare array object has below:
+    var myList = [
+        {"name":"HTML","url":"https://www.w3schools.com/"},
+        {"name":"CSS","url":"https://www.w3schools.com/css/"},
+    ];
+    var num =["Apple","OPPO","SamSunge","IPad","Huwai","Nokia"];
+    
+    document.getElementById("btn3").addEventListener("click",function(){
+        
+        var myNum = num.length; //  equal to number five elements.
+        var txt = '';
+        var myData = document.getElementById("txt-item");
+        num.push(myData.value);
+        
+        // for(i=0; i<myNum; i++){
+        //   //  txt += 'abc'+"<br>";
+        //     txt =txt+num[i]+"<br>";
+        // }
+        for(i in num){  // loop index by yourself, When u are using for in...
+            txt = txt+num[i]+"<br>";
+        }
+        document.getElementById("demo").innerHTML = txt;
+         //document.getElementById("demo").innerHTML = num[0];
+
+    });
+
+    //call function from array object
+    getMyList();
+     function getMyList(){
+        var txt = "";
+        var num = myList.length;
+        for(i =0; i<num;i++){
+            txt +="<li><a target='_blank' href='"+myList[i]['url']+"'>"+myList[i]['name']+"</a></li>";
+        }
+        document.getElementById("menu").innerHTML = "<ul>"+txt+"</ul>";
+     }
+    
+    // Called back function
+   // getMenu()
+    function getMenu(){
+        var num = colors.length;
+        var txt ="";
+        for(i =0; i<num; i++){
+            txt +="<li><a href='#'>"+colors[i]+"</a></li>";
+        }
+        document.getElementById("menu").innerHTML = "<ul>"+txt+"</ul>";
+    }
+
+    document.getElementById("btn2").addEventListener("click",function(){
+        var txt = "";
+        var num = colors.length;                    // equal to number: 5  defined var num length an array color = 5
+        for(i=0; i<num; i++){
+
+             txt = txt + "<li>"+colors[i]+"</li>";  // get data form index array colors[i]; 
+        }
+        document.getElementById("demo").innerHTML = "<ul>"+txt+"</ul>";
+
+        // for(i =4; i<5; i++){
+        //     alert("i ="+i);  // 4, 5  check condition between i number and 5 ? 4<5 :true , ? 5<5 :false
+        // }
+        // alert(i);  // 5
+    //      var txt = "";
+        //   for(i =1 ;i<5; i++){ //1 2 3 4 5
+        //      txt +=i +"<br>";
+        //    // txt = txt +i +"<br>";  <br> 1 <br> 2 <br> 3 <br> 4 <br> chekc condition eles stop wd.
+        //   }
+        //   document.getElementById("demo").innerHTML = txt;    
+          //1 2 3 4           
+    });
+     
+    // document.getElementById("btn2").addEventListener("click", function(){
+    //     var txt = "";
+    //     // alert(colors.length);             ==> Using for get data form array.list;
+    //     for(i =0; i<colors.length; i++){
+    //         // alert(i);
+    //         txt+= "<li> "+colors[i]+" </li>";
+    //     }
+    //     // alert(txt);
+    //     document.getElementById("demo").innerHTML ="<ul>"+txt+"</ul>";
+    // });
+
+    document.getElementById("btn1").addEventListener("click",function(){
+        var color ="red";
+        var phones = {'name':'iphone14','color':'black','price':"800$"}
+
+        // document.getElementById("demo").innerHTML = phones['name'];
+        // document.getElementById('demo').innerHTML = phones.name;
+        // document.getElementById('demo').innerHTML = itemColors;
+        // document.getElementById('demo').innerHTML = colors[0];  the find index in arry object js
+
+        document.getElementById("demo").innerHTML = phones['price'];
+
+    });
+
+</script>
+</html>

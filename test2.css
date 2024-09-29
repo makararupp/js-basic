@@ -1,0 +1,22 @@
+.left-menu{
+    background-color: crimson;
+}
+.left-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.left-menu ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+}
+.left-menu ul li a:hover{
+    background-color: coral;
+}
+.sub-menu{
+    width: 90%;
+    background-color:#333; 
+    margin-left: 5%;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop down list</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="test2.css"> 
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3  left-menu">
+
+                <!-- <ul>
+                    <li>
+                        <a href="">Apple</a>
+                        <div class="sub-menu">
+                            <ul>
+                                <li>
+                                    <a href="">Iphone</a>
+                                </li>
+                                <li>
+                                    <a href="">Ipad</a>
+                                </li>
+                                <li>
+                                    <a href="">App Store</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="">Google</a>
+                        <div class="sub-menu">
+                            <ul>
+                                <li>
+                                    <a href="">Android</a>
+                                </li>
+                                <li>
+                                    <a href="">GoogleMap</a>
+                                </li>
+                                <li>
+                                    <a href="">PlaySotre</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                </ul> -->
+
+            </div>
+        </div>
+    </div>  
+</body>
+<script>
+
+    //Collect main Menu such as Apple and Google 
+    var items= [
+        "Apple","Google"
+    ];
+    var data =[
+        // Make data with array object .
+        {"name":"Apple","sub":  ["Iphone","Ipad","App Store"] },
+        {"name":"Google","sub":  ["Android","GoogleMap","PlaySotre"] },
+        {"name":"Meta","sub":  ["Facebook","Instagram","Messager"] }
+    ];
+
+    getItem();
+    function getItem(){
+    var txt = "";
+    for(i in data){
+        var txt2 = "";
+        for(x in data[i]['sub']){
+            // alert(data[i]['sub'][x]);
+             txt2 = txt2 +"<li><a href=''>"+data[i]['sub'][x]+"</a></li>"
+        }
+        txt = txt + "<li><a href=''>"+data[i]['name']+"</a> <div class='sub-menu'><ul>"
+            +txt2+"</ul> </div> </li>";
+      }
+       document.getElementsByClassName("left-menu")[0].innerHTML = "<ul>"+txt+"</ul>";
+    }
+
+</script>
+</html>
